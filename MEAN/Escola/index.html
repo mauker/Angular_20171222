@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Http Angular</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body ng-app="app">
+	<div ng-controller="FormCtrl" id="form">
+		<form ng-submit="insert(user)" class="form">
+			<label for="nome"> Nome: </label><input name="nome" type="text" ng-model="user.nome" class="form-control">
+			<label for="idade"> Idade: </label><input name="idade" type="text" ng-model="user.idade" class="form-control">
+			<label for="profissao"> Profissao: </label><input name="profissao" type="text" ng-model="user.profissao" class="form-control">
+			<label for="cursando"> Cursando: </label><input name="cursando" type="text" ng-model="user.cursando" class="form-control">
+
+			<input type="submit" class="btn btn-sm  btn-primary" class="form-control" ng-value="user._id ? 'Update' : 'Create'" >
+			<input type="button" class="btn btn-sm  btn-default" class="form-control" value="New" ng-if=user._id ng-click="newAluno(user)">
+		</form>
+	</div>
+	<div ng-controller="ResultCtrl" id="result">
+		<ul>
+			<li ng-repeat="funcionario in funcionarios" >{{funcionario.nome}} - {{funcionario.profissao}} <button type="button" class=" btn-sm btn-warning" aria-label="Left Align" ng-click="editar(funcionario)">
+  				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button> 
+  				<button type="button" class=" btn-sm btn-danger" aria-label="Left Align" ng-click="delete(funcionario)">
+  				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+			</li>
+		</ul>
+	</div>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="app.js"> </script>
+
+</body>
+</html>

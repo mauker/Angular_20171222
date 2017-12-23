@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First Angular App</title>
+	<!-- Para o angular funcionar temos que importar a biblioteca-->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<!-- Neste arquivo está a camada de negocio da nossa aplicação -->
+	<script src="js/main.js"></script>
+</head>
+
+<!-- O atributo ng-app identifica esta tag como sendo a tag inicial do angular -->
+<body>
+	
+{{33+2}}
+<div ng-app="app">
+
+	<!-- NG Controller identifica este elemento como sendo uma controller do angular -->
+	<div ng-controller="GreetingController">
+		<!-- {{}} é ir para o escopo do angular.js, ou seja dentro deste elemento nós podemos executar java script -->>
+		{{greeting}}, {{aula}} {{33+2}}
+		<!-- ng-click que implementa o click do angular.js -->
+		<button ng-click="showAlert()">SHOW</button>
+	</div>
+</div>
+</body>
+</html>

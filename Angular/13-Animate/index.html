@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Animate</title>
+
+	<style>
+		.texto{
+			transition: all linear 0.5s;
+			height: 100px;
+			background: red;
+			opacity: 1;
+		}
+		.texto.ng-hide{
+			display: block !important;
+			height: 0px;
+			opacity: 0;
+			
+		}
+
+		.item.ng-enter{
+			-webkit-transition: all linear 0.5s
+		}
+		.item.ng-enter{
+			opacity: 0;
+		}
+		
+		.item.ng-enter span{
+			-webkit-transition: all linear 0.5s
+		}
+		.item.ng-enter span{
+			color: blue;
+			margin-left: -20px;
+		}
+		.item.ng-enter.ng-enter-active span{
+			color: blue;
+			margin-left: -20px;
+		}
+		
+		.item.ng-enter.ng-enter-active{
+			opacity: 1;
+		}
+		
+		.item.ng-leave{
+			animation: outAnimation 0.5s;
+		}
+
+		@keyframes outAnimation{
+			from{
+				opacity: 1;
+			}
+			to{
+				opacity: 0;
+			}
+		}
+
+		
+	</style>
+</head>
+<body ng-app="MyApp">
+	<div ng-controller="MainCtrl">
+		<div>
+			<form ng-submit="addItem(item)">
+				<input type="text" ng-model="item.name">
+				<input type="submit" value="Add">
+			</form>
+			<ul>
+				<li class="item" ng-repeat="item in itens" ><span>{{$index}} - {{item.name}}</span>  
+				<input type="button" value="Delete" ng-click="removeItem($index)"></li>
+			</ul>
+		</div>
+
+		<input type="button" ng-click="onOff()" value="{{labelInput}}">
+		<div ng-show="visible" class="texto">Meu texto de teste!</div>
+	</div>
+
+	<script src="bower_components/ngAnimate/js/angular.min.js"></script>
+	<script src="bower_components/ngAnimate/js/angular-animate.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

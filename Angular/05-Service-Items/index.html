@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Using Services</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<style>
+        body {
+            background-color: #ccc;
+            padding: 50px;
+        }
+    </style>
+
+</head>
+<body ng-app="App">
+	<div ng-controller="WannaBuy">
+		<ul>
+			<li ng-repeat="item in items" >{{item.name}} - <b>{{item.quantidade}}</b></li>
+		</ul>
+	</div>
+	<div ng-controller="AddItemCtrl">
+		<form ng-submit="addItem(item)">
+			<input type="text" ng-model="item.name">
+			<input type="number" ng-model="item.quantidade">
+			<input type="submit" value="Add">
+		</form>
+	</div>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="modules.js"></script>
+
+</body>
+</html>

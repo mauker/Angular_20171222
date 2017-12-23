@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.pagina1 {
+    margin: 0 auto;
+    background-color: red;
+    max-width: 500px;
+    padding: 40px;
+}
+
+.pagina2 {
+    margin: 0 auto;
+    background-color: yellow;
+    max-width: 500px;
+    padding: 40px;
+}
+
+.pagina3 {
+    margin: 0 auto;
+    background-color: green;
+    max-width: 500px;
+    padding: 40px;
+}

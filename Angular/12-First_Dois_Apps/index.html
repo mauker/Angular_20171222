@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First Angular App</title>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		<div ng-controller="GreetingController">
+			{{greeting}} {{tchau}} {{33}}
+			<button ng-click="showAlert()">SHOW</button>
+		</div>
+	</div>
+
+	<div id="secondApp">
+		<div ng-controller="GreetingController">
+			{{greeting}} {{tchau}} {{33}}
+			<button ng-click="showAlert()">SHOW</button>
+		</div>
+	</div>
+</body>
+</html>
